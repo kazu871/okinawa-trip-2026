@@ -2,7 +2,7 @@
 //  Reika Birthday 沖縄旅行 — しおり
 // ==========================================================================
 
-const KICKERS_EN = { transport: 'TRANSFER', hotel: 'STAY', breakfast: 'BREAKFAST', lunch: 'LUNCH', dinner: 'DINNER', snack: 'SNACK', sightseeing: 'SIGHTS', activity: 'EXPERIENCE', event: 'CEREMONY', free: 'FREE' };
+const KICKERS_EN = { transport: 'TRANSFER', hotel: 'STAY', breakfast: 'BREAKFAST', lunch: 'LUNCH', dinner: 'DINNER', snack: 'SNACK', sightseeing: 'SIGHTS', activity: 'EXPERIENCE', event: 'CEREMONY', free: 'FREE', spa: 'SPA' };
 
 const PACK = [
   { name: 'ビーチ', items: ['水着', 'ラッシュガード', 'サングラス', '日焼け止め', '帽子', 'ビーチサンダル', 'ビーチタオル'] },
@@ -156,7 +156,7 @@ function renderHotel(day) {
     </div>`;
 }
 
-function renderScheduleItem(item, idx, i) {
+function renderScheduleItem(item, idx, i, compact) {
   const isEvent = item.type === 'event';
   const special = !!item.reserved || isEvent;
   const whoColor = item.who === 'Reika' ? CORAL : TEAL;
@@ -168,7 +168,7 @@ function renderScheduleItem(item, idx, i) {
   else if (isEvent) bodyStyle = 'background:#EAF1F0;';
 
   const note = clean(scrub(item.note));
-  const whoTag = item.who ? `<span class="who-tag" style="background:${whoColor}">${esc(item.who)}</span>` : '';
+  const whoTag = (item.who && !compact) ? `<span class="who-tag" style="background:${whoColor}">${esc(item.who)}</span>` : '';
   const reservedTag = item.reserved ? '<span class="reserved-tag">● 予約済</span>' : '';
   const mapLink = item.map ? `<a class="linkbtn" href="${esc(item.map)}" target="_blank" rel="noopener">地図 ↗</a>` : '';
 
@@ -180,13 +180,16 @@ function renderScheduleItem(item, idx, i) {
     ? `<div class="rain-panel" data-rain-panel="${key}">${esc(clean(item.rain))}</div>`
     : '';
 
-  return `
-    <div class="tl-item">
-      <div class="tl-time">${esc(item.time)}</div>
+  const rail = compact ? '' : `
       <div class="tl-rail">
         <div class="tl-line"></div>
         <div class="tl-dot" style="background:${dotColor}"></div>
-      </div>
+      </div>`;
+
+  return `
+    <div class="tl-item${compact ? ' compact' : ''}">
+      <div class="tl-time">${esc(item.time)}</div>
+      ${rail}
       <div class="tl-body ${special ? 'special' : 'plain'}" style="${bodyStyle}">
         <div class="tl-meta">
           <span class="tl-kicker" style="color:${kickerColor}">${esc(kicker(item.type))}</span>
@@ -201,10 +204,55 @@ function renderScheduleItem(item, idx, i) {
     </div>`;
 }
 
+// Groups a day's schedule into runs of consecutive who-tagged items (a
+// "split" where Kazuhiro/Reika act independently) and plain runs, then
+// renders each run in order.
+function renderSchedule(day, idx) {
+  const groups = [];
+  day.schedule.forEach((item, i) => {
+    const kind = item.who ? 'split' : 'plain';
+    const last = groups[groups.length - 1];
+    if (last && last.kind === kind) last.items.push({ item, i });
+    else groups.push({ kind, items: [{ item, i }] });
+  });
+
+  return groups.map((g) => {
+    if (g.kind === 'plain') {
+      return g.items.map(({ item, i }) => renderScheduleItem(item, idx, i)).join('');
+    }
+    return renderSplitBlock(day, g.items, idx);
+  }).join('');
+}
+
+function renderSplitBlock(day, entries, idx) {
+  const labels = day.split_labels || {};
+  const people = ['Kazuhiro', 'Reika'];
+  const cols = people.map((person) => {
+    const mine = entries.filter(({ item }) => item.who === person);
+    if (!mine.length) return '';
+    const color = person === 'Reika' ? CORAL : TEAL;
+    const title = labels[person] || person;
+    const rows = mine.map(({ item, i }) => renderScheduleItem(item, idx, i, true)).join('');
+    return `
+      <div class="split-col">
+        <div class="split-col-head">
+          <span class="split-pill" style="background:${color}">${esc(person.toUpperCase())}</span>
+          <div class="split-col-title">${esc(title)}</div>
+        </div>
+        ${rows}
+      </div>`;
+  }).join('');
+
+  return `
+    <div class="split-divider"><span>ここから別行動</span></div>
+    <div class="split-grid">${cols}</div>
+    <div class="split-divider merge"><span>夜、合流</span></div>`;
+}
+
 function renderDay(idx) {
   const day = TRIP.days[idx];
   const num = String(idx + 1).padStart(2, '0');
-  const items = day.schedule.map((it, i) => renderScheduleItem(it, idx, i)).join('');
+  const items = renderSchedule(day, idx);
   return `
     <div class="day-head">
       <div class="day-masthead">

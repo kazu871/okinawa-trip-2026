@@ -153,6 +153,7 @@
       "date": "7/19",
       "day": "土",
       "theme": "🐠 美ら海水族館 → 結婚式（Kazuhiro）",
+      "split_labels": { "Kazuhiro": "結婚式へ", "Reika": "ホテルでフリー" },
       "schedule": [
         {
           "time": "08:00",
@@ -205,10 +206,18 @@
         },
         {
           "time": "14:45",
-          "label": "Reikaフリータイム（カフーリゾート スパ 120分）",
+          "label": "Reikaフリータイム",
           "type": "free",
           "who": "Reika",
-          "note": "カフーリゾート内スパで120分のトリートメント。その後はプール＆冨着ビーチでのんびりも"
+          "note": "スパまではプール・冨着ビーチなど"
+        },
+        {
+          "time": "15:30",
+          "label": "ホテルSpa（120分）",
+          "type": "spa",
+          "who": "Reika",
+          "map": "https://www.google.com/maps/search/?api=1&query=カフーリゾートフチャクコンドホテル+恩納村",
+          "note": "カフーリゾート スパ 15:30〜17:30。要事前予約"
         },
         {
           "time": "19:00",
