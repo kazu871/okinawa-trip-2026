@@ -1,0 +1,25 @@
+{
+  "categories": [
+    {
+      "name": "行きたい場所",
+      "emoji": "📍",
+      "items": [
+        {
+          "name": "古宇利島（ハートロック）",
+          "area": "今帰仁村",
+          "note": "古宇利大橋を渡った先の島。ティーヌ浜のハートロックが有名な縁結びスポット。美ら海水族館から車約40分",
+          "map": "https://www.google.com/maps/search/?api=1&query=古宇利島+ハートロック"
+        },
+        {
+          "name": "Bottle Palm Garden",
+          "area": "本部町・瀬底島",
+          "note": "瀬底島最南端にある海辺のカフェ。8:00〜15:00営業。アグー豚の自家製ソーセージホットドッグが名物",
+          "map": "https://www.google.com/maps/search/?api=1&query=Bottle+Palm+Garden+瀬底島"
+        }
+      ]
+    }
+  ],
+  "hints": [
+    "どちらも本部町・今帰仁エリアで美ら海水族館に近いので、7/19の行程に組み込む場合はセットで検討しやすい"
+  ]
+}

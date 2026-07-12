@@ -17,6 +17,7 @@ const CORAL = '#C36A4C';
 
 let TRIP = null;
 let RESTAURANTS = null;
+let SPOTS = null;
 let activeTab = 'day-0';
 let packing = {};
 
@@ -64,13 +65,15 @@ function savePacking() {
 //  Data
 // --------------------------------------------------------------------------
 async function loadData() {
-  const [tripRes, restaurantsRes] = await Promise.all([
+  const [tripRes, restaurantsRes, spotsRes] = await Promise.all([
     fetch('data/trip.json'),
     fetch('data/restaurants.json'),
+    fetch('data/spots.json'),
   ]);
-  if (!tripRes.ok || !restaurantsRes.ok) throw new Error('データの読み込みに失敗しました');
+  if (!tripRes.ok || !restaurantsRes.ok || !spotsRes.ok) throw new Error('データの読み込みに失敗しました');
   TRIP = await tripRes.json();
   RESTAURANTS = await restaurantsRes.json();
+  SPOTS = await spotsRes.json();
 }
 
 // --------------------------------------------------------------------------
@@ -103,6 +106,7 @@ function renderTabs() {
   const nav = document.getElementById('tabs');
   const tabs = TRIP.days.map((d, i) => ({ id: `day-${i}`, l1: d.date, l2: d.day }));
   tabs.push({ id: 'rest', l1: 'お店', l2: 'FOOD' });
+  tabs.push({ id: 'spots', l1: '場所', l2: 'SPOTS' });
   tabs.push({ id: 'pack', l1: '持ち物', l2: 'PACK' });
   tabs.push({ id: 'resv', l1: '予約', l2: 'CHECK' });
 
@@ -123,6 +127,7 @@ function switchTab(tabId) {
 
   const content = document.getElementById('content');
   if (tabId === 'rest') content.innerHTML = renderRestaurants();
+  else if (tabId === 'spots') content.innerHTML = renderSpots();
   else if (tabId === 'pack') { content.innerHTML = renderPacking(); attachPackHandlers(content); }
   else if (tabId === 'resv') content.innerHTML = renderReservations();
   else {
@@ -257,6 +262,46 @@ function renderRestaurants() {
       <div class="panel-kicker">GOURMET NOTES</div>
       <h2 class="panel-title">気になるお店</h2>
       <p class="panel-lead">日程に組み込んでいない「もし時間があったら行きたい」参考リストです。</p>
+      ${cats}
+      <div class="tips">
+        <div class="tips-label">PLANNING TIPS</div>
+        <div class="tips-title">プランへの組み込みヒント</div>
+        <ul>${hints}</ul>
+      </div>
+    </div>`;
+}
+
+// --------------------------------------------------------------------------
+//  Spots (candidate sightseeing spots)
+// --------------------------------------------------------------------------
+function renderSpots() {
+  const cats = SPOTS.categories.map((cat) => {
+    const items = cat.items.map((s) => `
+      <div class="rest-item">
+        <div>
+          <div class="rest-name">${esc(clean(s.name))}</div>
+          <div class="rest-area">${esc(clean(s.area))}</div>
+          <div class="rest-note">${esc(clean(s.note))}</div>
+        </div>
+        ${s.map ? `<a class="tag-link" href="${esc(s.map)}" target="_blank" rel="noopener">地図 ↗</a>` : ''}
+      </div>`).join('');
+    return `
+      <div class="cat">
+        <div class="cat-head roomy">
+          <h3 class="cat-name">${esc(clean(cat.name))}</h3>
+          <div class="cat-rule"></div>
+        </div>
+        ${items}
+      </div>`;
+  }).join('');
+
+  const hints = SPOTS.hints.map((h) => `<li>${esc(clean(h))}</li>`).join('');
+
+  return `
+    <div class="panel">
+      <div class="panel-kicker">SIGHTSEEING NOTES</div>
+      <h2 class="panel-title">気になる場所</h2>
+      <p class="panel-lead">日程に組み込んでいない「もし時間があったら行きたい」候補地です。</p>
       ${cats}
       <div class="tips">
         <div class="tips-label">PLANNING TIPS</div>
