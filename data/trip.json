@@ -138,15 +138,15 @@
           "note": "本部町備瀬。古宇利島から車で約30〜40分。スムージー専門店。13:00〜17:00営業"
         },
         {
-          "time": "16:00",
-          "label": "ビーチ51（ザネー浜）",
-          "type": "sightseeing",
-          "map": "https://www.google.com/maps/search/?api=1&query=ビーチ51+ザネー浜+恩納村",
-          "note": "恩納村・真栄田岬近くの穴場ビーチ。「岩の窓」が人気の撮影スポット。ホテルまで車で数分",
-          "rain": "スキップしてそのままホテルへ"
+          "time": "15:45",
+          "label": "ブセナ海中公園（グラスボート）",
+          "type": "activity",
+          "map": "https://www.google.com/maps/search/?api=1&query=ブセナ海中公園+名護市",
+          "note": "オキナワサンから車で約30分。名護市喜瀬。グラスボートは1時間に3便・所要約20分。海中展望塔もあり",
+          "rain": "海中展望塔・グラスボートとも屋根付きなので雨でも◎"
         },
         {
-          "time": "16:30",
+          "time": "17:00",
           "label": "カフーリゾートフチャク チェックイン",
           "type": "hotel",
           "map": "https://www.google.com/maps/search/?api=1&query=カフーリゾートフチャクコンドホテル+恩納村",
