@@ -1,0 +1,301 @@
+{
+  "meta": {
+    "title": "沖縄旅行 2026年7月17日〜20日",
+    "travelers": {
+      "main": "Kazuhiro",
+      "partner": "Reika"
+    },
+    "flights": {
+      "outbound": "JAL915 羽田 11:55 → 那覇 14:30",
+      "return": "JAL916 那覇 17:50 → 羽田 20:25"
+    },
+    "rental_car": "7/17 15:00 〜 7/20 16:30（那覇空港店）"
+  },
+  "hotels": [
+    {
+      "name": "ESTINATE HOTEL 那覇",
+      "nights": ["7/17"],
+      "map": "https://www.google.com/maps/search/?api=1&query=ESTINATE+HOTEL+那覇"
+    },
+    {
+      "name": "カフーリゾートフチャク コンド・ホテル",
+      "nights": ["7/18", "7/19"],
+      "map": "https://www.google.com/maps/search/?api=1&query=カフーリゾートフチャクコンドホテル+恩納村",
+      "note": "7/18 チェックイン時に「Reikaの誕生日」と伝える"
+    }
+  ],
+  "days": [
+    {
+      "date": "7/17",
+      "day": "木",
+      "theme": "到着日 → 那覇",
+      "schedule": [
+        {
+          "time": "11:55",
+          "label": "羽田発",
+          "type": "transport",
+          "note": "JAL915"
+        },
+        {
+          "time": "14:30",
+          "label": "那覇空港着",
+          "type": "transport"
+        },
+        {
+          "time": "15:00",
+          "label": "レンタカーピックアップ",
+          "type": "transport",
+          "note": "空港送迎あり"
+        },
+        {
+          "time": "15:30",
+          "label": "瀬長島 ウミカジテラス",
+          "type": "sightseeing",
+          "map": "https://www.google.com/maps/search/?api=1&query=瀬長島ウミカジテラス+沖縄",
+          "note": "空港から車10分。海を望むテラス・カフェ・雑貨。所要1〜1.5h",
+          "rain": "短時間に短縮 → 国際通りへ"
+        },
+        {
+          "time": "17:00",
+          "label": "ESTINATE HOTEL 那覇 チェックイン",
+          "type": "hotel",
+          "map": "https://www.google.com/maps/search/?api=1&query=ESTINATE+HOTEL+那覇"
+        },
+        {
+          "time": "17:30",
+          "label": "国際通り 散策",
+          "type": "sightseeing",
+          "map": "https://www.google.com/maps/search/?api=1&query=国際通り+那覇",
+          "note": "ホテルから徒歩圏内"
+        },
+        {
+          "time": "19:30",
+          "label": "島しゃぶしゃぶNAKAMA",
+          "type": "dinner",
+          "reserved": true,
+          "map": "https://www.google.com/maps/search/?api=1&query=島しゃぶしゃぶNAKAMA+那覇",
+          "note": "那覇市久茂地B1F。アグー豚・石垣牛しゃぶしゃぶ"
+        }
+      ]
+    },
+    {
+      "date": "7/18",
+      "day": "金",
+      "theme": "🎂 Reikaの誕生日 → 那覇〜中部〜恩納村",
+      "schedule": [
+        {
+          "time": "09:30",
+          "label": "チェックアウト・出発",
+          "type": "transport"
+        },
+        {
+          "time": "09:30",
+          "label": "OKI BOWL",
+          "type": "breakfast",
+          "map": "https://www.google.com/maps/search/?api=1&query=OKI+BOWL+那覇+銘苅",
+          "note": "那覇市銘苅。アサイーボウル専門店。朝8:00〜。チェックアウト後に立ち寄り"
+        },
+        {
+          "time": "11:00",
+          "label": "北谷（アメリカンビレッジ）",
+          "type": "sightseeing",
+          "map": "https://www.google.com/maps/search/?api=1&query=北谷アメリカンビレッジ+沖縄",
+          "rain": "屋根付き施設あり、雨でも◎"
+        },
+        {
+          "time": "11:00",
+          "label": "KAME ANDAGI",
+          "type": "snack",
+          "map": "https://www.google.com/maps/search/?api=1&query=KAME+ANDAGI+北谷+美浜",
+          "note": "サーターアンダギー専門店。アイス載せが人気"
+        },
+        {
+          "time": "12:00",
+          "label": "808 PokéBowls Okinawa 北谷",
+          "type": "lunch",
+          "map": "https://www.google.com/maps/search/?api=1&query=808+PokeBowls+北谷+沖縄",
+          "note": "ランチ。ポケボウル"
+        },
+        {
+          "time": "13:00",
+          "label": "体験王国 むら咲むら",
+          "type": "activity",
+          "map": "https://www.google.com/maps/search/?api=1&query=体験王国むら咲むら+読谷村",
+          "note": "北谷から車15分。琉球文化体験（陶芸・琉球ガラス等）。所要2〜2.5h。体験は要事前予約",
+          "rain": "屋内体験メインなので雨でも◎"
+        },
+        {
+          "time": "15:30",
+          "label": "サンマリーナビーチ",
+          "type": "sightseeing",
+          "map": "https://www.google.com/maps/search/?api=1&query=サンマリーナビーチ+恩納村",
+          "note": "読谷から車15分。青い海を一望",
+          "rain": "スキップしてそのままホテルへ"
+        },
+        {
+          "time": "16:30",
+          "label": "カフーリゾートフチャク チェックイン",
+          "type": "hotel",
+          "map": "https://www.google.com/maps/search/?api=1&query=カフーリゾートフチャクコンドホテル+恩納村",
+          "note": "チェックイン時に誕生日を伝える"
+        },
+        {
+          "time": "19:00",
+          "label": "🎂 琉球BBQ Blue（誕生日ディナー）",
+          "type": "dinner",
+          "reserved": true,
+          "map": "https://www.google.com/maps/search/?api=1&query=琉球BBQ+Blue+恩納村",
+          "note": "カフーリゾート アネックス棟12F。全席オーシャンビュー。誕生日演出あり"
+        }
+      ]
+    },
+    {
+      "date": "7/19",
+      "day": "土",
+      "theme": "🐠 美ら海水族館 → 結婚式（Kazuhiro）",
+      "schedule": [
+        {
+          "time": "08:00",
+          "label": "ホテル出発",
+          "type": "transport",
+          "note": "カフーリゾート → 美ら海（約1時間）"
+        },
+        {
+          "time": "09:00",
+          "label": "美ら海水族館",
+          "type": "activity",
+          "map": "https://www.google.com/maps/search/?api=1&query=沖縄美ら海水族館+本部町",
+          "note": "開館と同時入場。ジンベエザメ・イルカショーなど。所要2.5〜3h。チケット事前購入推奨",
+          "rain": "屋内なので全く問題なし"
+        },
+        {
+          "time": "12:00",
+          "label": "レストランふりっぱー（ランチ）",
+          "type": "lunch",
+          "map": "https://www.google.com/maps/search/?api=1&query=ふりっぱー+名護市",
+          "note": "名護市。美ら海から車30分。沖縄スタイルのステーキ。人気店で並ぶ可能性あり",
+          "rain": "雨天で行列増の可能性。開店早めに到着を"
+        },
+        {
+          "time": "13:30",
+          "label": "名護出発 → ホテルへ（Reikaを送る）",
+          "type": "transport",
+          "note": "約45分"
+        },
+        {
+          "time": "14:15",
+          "label": "カフーリゾート着・Reikaを降ろす",
+          "type": "transport",
+          "note": "Kazuhiroはここで着替えて出発"
+        },
+        {
+          "time": "14:25",
+          "label": "Kazuhiro → 万国津梁館へ出発",
+          "type": "transport",
+          "who": "Kazuhiro",
+          "note": "カフーリゾート → 万国津梁館 約30〜40分"
+        },
+        {
+          "time": "14:45",
+          "label": "結婚式（Kazuhiroのみ）",
+          "type": "event",
+          "who": "Kazuhiro",
+          "map": "https://www.google.com/maps/search/?api=1&query=万国津梁館+名護市喜瀬",
+          "note": "万国津梁館（名護市喜瀬）。14:45〜19:00"
+        },
+        {
+          "time": "14:45",
+          "label": "Reikaフリータイム",
+          "type": "free",
+          "who": "Reika",
+          "note": "ホテルプール＆スパ、冨着ビーチなど"
+        },
+        {
+          "time": "19:00",
+          "label": "Kazuhiro 式終了 → うむさんの庭へ出発",
+          "type": "transport",
+          "who": "Kazuhiro",
+          "note": "移動約45〜50分"
+        },
+        {
+          "time": "20:15",
+          "label": "うむさんの庭（2人で合流）",
+          "type": "dinner",
+          "reserved": true,
+          "map": "https://www.google.com/maps/search/?api=1&query=うむさんの庭+恩納村",
+          "note": "三線ライブあり（土曜）。予約済み 20:15"
+        }
+      ]
+    },
+    {
+      "date": "7/20",
+      "day": "日",
+      "theme": "帰宅日",
+      "schedule": [
+        {
+          "time": "06:30",
+          "label": "朝食",
+          "type": "breakfast",
+          "note": "琉球BBQ Blue（ホテル12F）は朝食6:30〜あり"
+        },
+        {
+          "time": "09:30",
+          "label": "チェックアウト・出発",
+          "type": "transport"
+        },
+        {
+          "time": "11:00",
+          "label": "糸満漁民食堂（ランチ）",
+          "type": "lunch",
+          "map": "https://www.google.com/maps/search/?api=1&query=糸満漁民食堂+糸満市",
+          "note": "開店と同時に到着目標。人気店で並ぶことあり。ランチのみ営業"
+        },
+        {
+          "time": "12:30",
+          "label": "国際通り ラストショッピング",
+          "type": "sightseeing",
+          "map": "https://www.google.com/maps/search/?api=1&query=国際通り+那覇",
+          "note": "お土産・免税品",
+          "rain": "アーケードがあるので雨でも◎"
+        },
+        {
+          "time": "15:00",
+          "label": "那覇空港へ出発",
+          "type": "transport"
+        },
+        {
+          "time": "16:00",
+          "label": "那覇空港 到着",
+          "type": "transport"
+        },
+        {
+          "time": "16:30",
+          "label": "レンタカー返却",
+          "type": "transport",
+          "map": "https://www.google.com/maps/search/?api=1&query=那覇空港+レンタカー",
+          "note": "那覇空港店"
+        },
+        {
+          "time": "17:50",
+          "label": "那覇発",
+          "type": "transport",
+          "note": "JAL916"
+        },
+        {
+          "time": "20:25",
+          "label": "羽田着",
+          "type": "transport"
+        }
+      ]
+    }
+  ],
+  "reservations": [
+    { "date": "7/17", "time": "19:30", "name": "島しゃぶしゃぶNAKAMA", "status": "済" },
+    { "date": "7/18", "time": "19:00", "name": "琉球BBQ Blue", "status": "済", "note": "誕生日を伝える" },
+    { "date": "7/19", "time": "20:15", "name": "うむさんの庭", "status": "済（変更済）" },
+    { "date": "7/17-20", "name": "ESTINATE HOTEL那覇 / カフーリゾートフチャク", "status": "済" },
+    { "date": "7/17-20", "name": "レンタカー", "status": "済" },
+    { "name": "美ら海水族館チケット", "status": "要事前購入", "url": "https://churaumi.okinawa/ticket/" },
+    { "name": "体験王国むら咲むら（体験プログラム）", "status": "要予約" }
+  ]
+}
