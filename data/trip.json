@@ -81,7 +81,7 @@
     {
       "date": "7/18",
       "day": "金",
-      "theme": "🎂 Reikaの誕生日 → 那覇〜中部〜恩納村",
+      "theme": "🎂 Reikaの誕生日 → 那覇〜北谷〜古宇利島〜恩納村",
       "schedule": [
         {
           "time": "09:30",
@@ -118,18 +118,31 @@
         },
         {
           "time": "13:00",
-          "label": "体験王国 むら咲むら",
-          "type": "activity",
-          "map": "https://www.google.com/maps/search/?api=1&query=体験王国むら咲むら+読谷村",
-          "note": "北谷から車15分。琉球文化体験（陶芸・琉球ガラス等）。所要2〜2.5h。体験は要事前予約",
-          "rain": "屋内体験メインなので雨でも◎"
+          "label": "古宇利島へ移動",
+          "type": "transport",
+          "note": "北谷から車で約70〜80分。今帰仁村の古宇利大橋を渡って古宇利島へ"
         },
         {
-          "time": "15:30",
-          "label": "サンマリーナビーチ",
+          "time": "14:30",
+          "label": "古宇利ビーチ・ハートロック",
           "type": "sightseeing",
-          "map": "https://www.google.com/maps/search/?api=1&query=サンマリーナビーチ+恩納村",
-          "note": "読谷から車15分。青い海を一望",
+          "map": "https://www.google.com/maps/search/?api=1&query=古宇利島+ハートロック",
+          "note": "古宇利大橋のたもとの遠浅ビーチ。少し先のティーヌ浜にハートロック（縁結びスポット）",
+          "rain": "橋からの景色は雨でも楽しめる。ビーチ滞在は短めに"
+        },
+        {
+          "time": "15:15",
+          "label": "オキナワサン",
+          "type": "snack",
+          "map": "https://www.google.com/maps/search/?api=1&query=オキナワサン+本部町+備瀬",
+          "note": "本部町備瀬。古宇利島から車で約30〜40分。スムージー専門店。13:00〜17:00営業"
+        },
+        {
+          "time": "16:00",
+          "label": "ビーチ51（ザネー浜）",
+          "type": "sightseeing",
+          "map": "https://www.google.com/maps/search/?api=1&query=ビーチ51+ザネー浜+恩納村",
+          "note": "恩納村・真栄田岬近くの穴場ビーチ。「岩の窓」が人気の撮影スポット。ホテルまで車で数分",
           "rain": "スキップしてそのままホテルへ"
         },
         {
@@ -254,10 +267,10 @@
         },
         {
           "time": "11:00",
-          "label": "糸満漁民食堂（ランチ）",
+          "label": "ジャッキーステーキハウス（ランチ）",
           "type": "lunch",
-          "map": "https://www.google.com/maps/search/?api=1&query=糸満漁民食堂+糸満市",
-          "note": "開店と同時に到着目標。人気店で並ぶことあり。ランチのみ営業"
+          "map": "https://www.google.com/maps/search/?api=1&query=ジャッキーステーキハウス+那覇",
+          "note": "那覇市西。1953年創業の老舗ステーキ店。国際通りから徒歩圏内で動線がシンプルに。常に行列のできる人気店なので早めの到着を"
         },
         {
           "time": "12:30",
@@ -305,7 +318,6 @@
     { "date": "7/17-20", "name": "ESTINATE HOTEL那覇 / カフーリゾートフチャク", "status": "済" },
     { "date": "7/17-20", "name": "レンタカー", "status": "済" },
     { "name": "美ら海水族館チケット", "status": "要事前購入", "url": "https://churaumi.okinawa/ticket/" },
-    { "name": "体験王国むら咲むら（体験プログラム）", "status": "要予約" },
     { "date": "7/19", "name": "カフーリゾート スパ 120分（Reika）", "status": "要予約" }
   ]
 }
